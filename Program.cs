@@ -32,7 +32,7 @@ namespace Bam.Net.System
             
             ExecuteMain(args, (a) =>
             {
-                OutLineFormat("Error parsing arguments: {0}", ConsoleColor.Red, a.Message);
+                Message.PrintLine("Error parsing arguments: {0}", ConsoleColor.Red, a.Message);
                 Environment.Exit(1);
             });
         }

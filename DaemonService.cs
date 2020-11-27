@@ -106,7 +106,7 @@ namespace Bam.Net.System
                 FileInfo configFile = new FileInfo(ParsedArguments.Current["conf"]);
                 if (!configFile.Exists)
                 {
-                    OutLineFormat("Specified conf file does not exist ({0})", ConsoleColor.Red, configFile.FullName);
+                    Message.PrintLine("Specified conf file does not exist ({0})", ConsoleColor.Red, configFile.FullName);
                     Exit(1);
                 }
                 return _daemonProcessMonitorServiceLock.DoubleCheckLock(ref _daemonProcessMonitorService, () => DaemonProcessMonitorService.Start(logger, configFile));
