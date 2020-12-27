@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>bamd</id>
-    <version>1.0.5-test+a0463cb</version>
+    <version>1.0.5-test+85ad857</version>
     <authors>Bryan Apellanes</authors>
     <description>bamd</description>
   </metadata>
