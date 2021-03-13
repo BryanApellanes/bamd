@@ -29,8 +29,8 @@ namespace Bam.Net.System
 
             IsolateMethodCalls = false;
             AddValidArgument("conf", "Specify an alternate config file to use.  Should be a json file containing an array of DaemonProcess definitions.");
-            
-            ExecuteMain(args, (a) =>
+
+            ExecuteMainOrInteractive(args, (a) =>
             {
                 Message.PrintLine("Error parsing arguments: {0}", ConsoleColor.Red, a.Message);
                 Environment.Exit(1);
