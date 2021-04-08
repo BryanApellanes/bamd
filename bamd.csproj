@@ -14,10 +14,10 @@
     <NuspecProperties>publishDir=$([MSBuild]::NormalizeDirectory($(IntermediatePackDir)))</NuspecProperties>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>\opt\bam\build\bamd\debug\</OutputPath>
+    <OutputPath>\opt\bam\build\debug\bamd\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>\opt\bam\build\bamd\release</OutputPath>
+    <OutputPath>\opt\bam\build\release\bamd\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="daemon.ico" />
