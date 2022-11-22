@@ -33,7 +33,7 @@ namespace Bam.Net.System
                         ProcessMonitorService = ResolveProcessMonitorService(logger);
                         DaemonServer server = new DaemonServer(BamConf, ProcessMonitorService, logger)
                         {
-                            HostPrefixes = new HashSet<HostPrefix>(GetConfiguredHostPrefixes()),
+                            HostBindings = new HashSet<HostBinding>(GetConfiguredHostPrefixes()),
                             MonitorDirectories = DefaultConfiguration.GetAppSetting("MonitorDirectories").DelimitSplit(",", ";")
                         };
                         logger.AddEntry("Created Server of Type {0}: {1}", typeof(DaemonServer).FullName, server.PropertiesToString());
@@ -77,9 +77,9 @@ namespace Bam.Net.System
             }
         }
 
-        private static HostPrefix[] GetConfiguredHostPrefixes()
+        private static HostBinding[] GetConfiguredHostPrefixes()
         {
-            return ServiceConfig.GetConfiguredHostPrefixes();
+            return ServiceConfig.GetConfiguredHostBindings();
         }
 
         static ILogger _daemonServiceLogger;
@@ -99,7 +99,7 @@ namespace Bam.Net.System
         private static DaemonProcessMonitorService _daemonProcessMonitorService;
         private static readonly object _daemonProcessMonitorServiceLock = new object();
 
-        private static DaemonProcessMonitorService ResolveProcessMonitorService(ILogger logger)
+        internal static DaemonProcessMonitorService ResolveProcessMonitorService(ILogger logger)
         {
             if (ParsedArguments.Current.Contains("conf"))
             {

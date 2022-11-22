@@ -10,6 +10,9 @@ namespace Bam.Net.System
 {
     public class DaemonResponder : HttpHeaderResponder
     {
+        public DaemonResponder() : this(BamConf.Load(), DaemonService.ResolveProcessMonitorService(Log.Default), Log.Default)
+        { }
+
         public DaemonResponder(BamConf conf, DaemonProcessMonitorService monitorService, ILogger logger, bool verbose = false) 
             : base(conf, logger)
         {
