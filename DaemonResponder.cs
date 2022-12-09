@@ -37,7 +37,7 @@ namespace Bam.Net.System
         {
             if (!ServiceProxyResponder.TryRespond(context))
             {
-                SendResponse(context, 404, new { BamServer = "BamDaemon" });
+                SendResponse(context, new HttpStatusCodeHandler(404, "Not Found"), new { BamServer = "BamDaemon" });
             }
             context.Response.Close();
             return true;

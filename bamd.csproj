@@ -19,6 +19,11 @@
     <OutputPath Condition=" '$(OS)' == 'UNIX' ">$(HOME)\.bam\build\$(Configuration)\$(MSBuildThisFileName)\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="submodules\**" />
+    <EmbeddedResource Remove="submodules\**" />
+    <None Remove="submodules\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="daemon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <DeployManifest Remove="obj\Debug\netcoreapp2.2\bamd.application" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="submodules\bam.core\bam.core\bam.core.csproj" />
   </ItemGroup>
   <Target Name="PublishAll" BeforeTargets="GenerateNuspec">
     <ItemGroup>
