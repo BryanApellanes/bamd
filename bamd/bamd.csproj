@@ -59,7 +59,7 @@
     <DeployManifest Remove="obj\Debug\netcoreapp2.2\bamd.application" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="submodules\bam.core\bam.core\bam.core.csproj" />
+    <ProjectReference Include="..\submodules\bam.core\bam.core\bam.core.csproj" />
   </ItemGroup>
   <Target Name="PublishAll" BeforeTargets="GenerateNuspec">
     <ItemGroup>
