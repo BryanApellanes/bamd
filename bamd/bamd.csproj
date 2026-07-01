@@ -56,13 +56,14 @@
     <Compile Remove="DaemonResponder.cs" />
     <Compile Remove="DaemonServer.cs" />
     <Compile Remove="DaemonService.cs" />
-    <Compile Remove="Program.cs" />
+    <Compile Remove="SemanticAssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <DeployManifest Remove="obj\Debug\netcoreapp2.2\bamd.application" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\bam.base\bam.base\bam.base.csproj" />
+    <ProjectReference Include="..\..\bam.console\bam.console\bam.console.csproj" />
   </ItemGroup>
   <Target Name="PublishAll" BeforeTargets="GenerateNuspec">
     <ItemGroup>
